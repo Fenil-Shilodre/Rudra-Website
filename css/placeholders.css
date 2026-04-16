@@ -1,0 +1,16 @@
+/* ============================================
+   REAL IMAGE BACKGROUNDS
+   ============================================ */
+
+/* Hero slides */
+.slide-1 { background-image: url('../assets/hero/hero-1.jpg'); }
+.slide-2 { background-image: url('../assets/hero/hero-2.jpg'); }
+.slide-3 { background-image: url('../assets/hero/hero-3.jpg'); }
+
+/* Page heroes */
+.about-hero    { background-image: url('../assets/hero/about-hero.jpg') !important; }
+.products-hero { background-image: url('../assets/hero/hero-1.jpg') !important; }
+.contact-hero  { background-image: url('../assets/hero/hero-3.jpg') !important; }
+
+/* About factory block */
+.about-img-block::after { display: none; }

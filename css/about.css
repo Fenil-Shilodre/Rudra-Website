@@ -1,0 +1,108 @@
+/* ============================================
+   ABOUT PAGE – Specific Styles
+   ============================================ */
+
+.about-hero {
+  background-image: url('../assets/hero/hero-2.jpg');
+  background-color: #1a2a5e;
+}
+
+/* ---- ABOUT STORY ---- */
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-img-block {
+  height: 420px;
+  border-radius: var(--radius-lg);
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-light);
+  box-shadow: var(--shadow-md);
+}
+
+.about-story-text p {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.about-values {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.value-item i { color: var(--brand); font-size: 0.9rem; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-img-block { height: 280px; }
+  .about-values { grid-template-columns: 1fr; }
+}
+
+/* ---- TEAM SECTION ---- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.team-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.team-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.team-img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-light);
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-img { transform: scale(1.04); }
+
+.team-info {
+  padding: 1.5rem;
+}
+
+.team-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.team-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Fix about-img-block — remove emoji fallback now that real image is used */
+.about-img-block::after { display: none; }
