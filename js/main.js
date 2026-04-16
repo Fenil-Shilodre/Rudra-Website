@@ -81,56 +81,57 @@ document.addEventListener('DOMContentLoaded', () => {
     startTimer();
   }
 
-  /* ---- SCROLL REVEAL ---- */
-  const revealEls = document.querySelectorAll('.reveal');
+  /* ---- SCROLL REVEAL (Fallback if GSAP not loaded) ---- */
+  if (typeof gsap === 'undefined') {
+    const revealEls = document.querySelectorAll('.reveal');
 
-  if (revealEls.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          // Stagger siblings
-          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
-          let delay = 0;
-          siblings.forEach((sib, idx) => {
-            if (sib === entry.target) delay = idx * 80;
-          });
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, delay);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    if (revealEls.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+            let delay = 0;
+            siblings.forEach((sib, idx) => {
+              if (sib === entry.target) delay = idx * 80;
+            });
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    revealEls.forEach(el => observer.observe(el));
-  }
+      revealEls.forEach(el => observer.observe(el));
+    }
 
-  /* ---- COUNTER ANIMATION ---- */
-  const counters = document.querySelectorAll('.stat-num');
+    /* ---- COUNTER ANIMATION (Fallback) ---- */
+    const counters = document.querySelectorAll('.stat-num');
 
-  if (counters.length > 0) {
-    const countObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.target);
-          const duration = 1800;
-          const step = target / (duration / 16);
-          let current = 0;
+    if (counters.length > 0) {
+      const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            const duration = 1800;
+            const step = target / (duration / 16);
+            let current = 0;
 
-          const tick = () => {
-            current = Math.min(current + step, target);
-            el.textContent = Math.floor(current);
-            if (current < target) requestAnimationFrame(tick);
-          };
+            const tick = () => {
+              current = Math.min(current + step, target);
+              el.textContent = Math.floor(current);
+              if (current < target) requestAnimationFrame(tick);
+            };
 
-          requestAnimationFrame(tick);
-          countObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
+            requestAnimationFrame(tick);
+            countObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
 
-    counters.forEach(c => countObserver.observe(c));
+      counters.forEach(c => countObserver.observe(c));
+    }
   }
 
   /* ---- CONTACT FORM ---- */

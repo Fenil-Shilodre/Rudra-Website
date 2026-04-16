@@ -4,14 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products – Rudra Industries</title>
+  <meta name="description" content="Explore Rudra Industries' complete range of industrial packaging products — FIBC bags, laminated paper bags, multi-layer paper bags, plastic liner bags, and PP/HDPE woven sacks." />
   <link rel="icon" type="image/png" href="assets/fevicon.png" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/products.css" />
   <link rel="stylesheet" href="css/placeholders.css" />
+  <link rel="stylesheet" href="css/animations.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+<body style="overflow:hidden;">
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <img src="assets/logo.png" alt="Loading..." class="preloader-logo" />
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- NAV -->
   <nav class="navbar" id="navbar">
@@ -205,6 +220,11 @@
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>

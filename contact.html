@@ -4,14 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us – Rudra Industries</title>
+  <meta name="description" content="Contact Rudra Industries for custom packaging solutions. Get a quote for FIBC bags, paper bags, and woven sacks. Located in Ankleshwar, Gujarat, India." />
   <link rel="icon" type="image/png" href="assets/fevicon.png" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/contact.css" />
   <link rel="stylesheet" href="css/placeholders.css" />
+  <link rel="stylesheet" href="css/animations.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+<body style="overflow:hidden;">
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <img src="assets/logo.png" alt="Loading..." class="preloader-logo" />
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- NAV -->
   <nav class="navbar" id="navbar">
@@ -66,13 +81,6 @@
               <strong>Phone</strong>
               <p><a href="tel:+919687654788">+91 96876 54788</a></p>
               <p><a href="tel:+919925207671">+91 99252 07671</a></p>
-            </div>
-          </div>
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon" style="background:#e8f8f1;color:#25d366;"><i class="fa-brands fa-whatsapp"></i></div>
-            <div>
-              <strong>WhatsApp</strong>
-              <p><a href="https://wa.me/919687654788" target="_blank">+91 96876 54788</a></p>
             </div>
           </div>
           <div class="contact-detail-item">
@@ -209,6 +217,11 @@
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>

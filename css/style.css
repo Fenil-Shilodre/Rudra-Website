@@ -31,6 +31,12 @@ body {
   line-height: 1.7;
   font-size: 15px;
   overflow-x: hidden;
+  cursor: none;
+}
+
+/* Restore default cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body { cursor: auto; }
 }
 
 img { max-width: 100%; display: block; }
@@ -128,9 +134,12 @@ h3 { font-size: 1.15rem; }
 }
 
 .navbar.scrolled {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
   padding: 12px 0;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 1px 20px rgba(46,78,161,0.06);
+  border-bottom: 1px solid rgba(46,78,161,0.04);
 }
 
 .nav-inner {
@@ -543,7 +552,7 @@ h3 { font-size: 1.15rem; }
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible {
   opacity: 1;

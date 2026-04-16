@@ -12,18 +12,29 @@
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 4rem;
-  align-items: start;
+  /* Removed align-items: start to allow columns to stretch to equal height */
 }
 
 /* ---- CONTACT INFO ---- */
-.contact-info p {
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Stretch to fill container */
+}
+
+.contact-info > p {
   color: var(--text-body);
   font-size: 0.9rem;
   line-height: 1.8;
   margin-bottom: 2rem;
 }
 
-.contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-details { 
+  display: flex; 
+  flex-direction: column; 
+  flex-grow: 1; /* Take up all remaining vertical space */
+  justify-content: space-between; /* Space out the contact icons/details evenly */
+}
 
 .contact-detail-item {
   display: flex;

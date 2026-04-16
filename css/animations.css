@@ -1,0 +1,681 @@
+/* ============================================
+   RUDRA INDUSTRIES – Premium Animations CSS
+   ============================================ */
+
+/* ---- PRELOADER ---- */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #0a1128;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-logo {
+  width: 80px;
+  height: 80px;
+  animation: preloaderPulse 1.2s ease-in-out infinite;
+  filter: brightness(0) invert(1);
+}
+
+.preloader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(46, 78, 161, 0.2);
+  border-top: 3px solid #2E4EA1;
+  border-radius: 50%;
+  animation: spinLoader 0.8s linear infinite;
+}
+
+@keyframes spinLoader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloaderPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.7;
+  }
+}
+
+/* ---- CUSTOM CURSOR ---- */
+.custom-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #2E4EA1;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100000;
+  transition: transform 0.15s ease, opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  opacity: 0;
+}
+
+.custom-cursor.visible {
+  opacity: 1;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(46, 78, 161, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, transform 0.08s ease;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.cursor-ring.visible {
+  opacity: 1;
+}
+
+.cursor-ring.hovering {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(46, 78, 161, 0.6);
+  background: rgba(46, 78, 161, 0.05);
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+
+  .custom-cursor,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ---- SCROLL PROGRESS BAR ---- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #2E4EA1, #6b8cff, #2E4EA1);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+  z-index: 10001;
+  transition: width 0.05s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ---- NAVBAR GLASSMORPHISM UPGRADE ---- */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid rgba(46, 78, 161, 0.06);
+}
+
+/* ---- MAGNETIC BUTTON WRAPPER ---- */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+/* ---- ENHANCED REVEAL ANIMATIONS ---- */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-rotate {
+  opacity: 0;
+  transform: translateY(30px) rotate(3deg);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-scale.visible,
+.reveal-rotate.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+}
+
+/* ---- 3D CARD HOVER EFFECTS ---- */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.service-card,
+.team-card,
+.testimonial-card,
+.industry-item {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+.service-card:hover {
+  box-shadow: 0 20px 60px rgba(46, 78, 161, 0.15), 0 0 0 1px rgba(46, 78, 161, 0.1);
+}
+
+.team-card:hover {
+  box-shadow: 0 20px 60px rgba(46, 78, 161, 0.15);
+}
+
+/* ---- GLOW BORDER ON HOVER ---- */
+.service-card::after,
+.team-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(46, 78, 161, 0.3), rgba(107, 140, 255, 0.1), rgba(46, 78, 161, 0.3));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-card:hover::after,
+.team-card:hover::after {
+  opacity: 1;
+}
+
+.service-card,
+.team-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- FLOATING ANIMATION (Industry Icons) ---- */
+.float-icon {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.float-icon:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.float-icon:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.float-icon:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.float-icon:nth-child(5) {
+  animation-delay: 1.6s;
+}
+
+.float-icon:nth-child(6) {
+  animation-delay: 2.0s;
+}
+
+@keyframes floatUpDown {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ---- ICON GLOW PULSE ---- */
+.industry-item i {
+  text-shadow: 0 0 0px transparent;
+  transition: text-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.industry-item:hover i {
+  text-shadow: 0 0 20px rgba(46, 78, 161, 0.4), 0 0 40px rgba(46, 78, 161, 0.15);
+  transform: scale(1.25);
+}
+
+/* ---- CTA GRADIENT ANIMATION ---- */
+.cta-band {
+  background: linear-gradient(135deg, #1e3578, #2E4EA1, #3d63c7, #2E4EA1, #1e3578);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ---- PRODUCT CARD HOVER DEPTH ---- */
+.product-card {
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(46, 78, 161, 0.12), 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.08);
+}
+
+/* ---- PRODUCT DETAIL IMAGE PARALLAX ---- */
+.product-detail-img {
+  overflow: hidden;
+  position: relative;
+}
+
+.product-detail-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(46, 78, 161, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.product-detail-card:hover .product-detail-img::after {
+  opacity: 1;
+}
+
+/* ---- PRODUCT TAG PULSE ---- */
+.product-tag {
+  animation: tagPulse 3s ease-in-out infinite;
+}
+
+@keyframes tagPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 78, 161, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(46, 78, 161, 0);
+  }
+}
+
+/* ---- HERO PARTICLES CONTAINER ---- */
+#hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ---- TEXT SPLIT ANIMATION PREP ---- */
+.split-text .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.split-text .word {
+  display: inline-block;
+}
+
+/* ---- SECTION TITLE UNDERLINE ANIMATION ---- */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2E4EA1, #6b8cff);
+  border-radius: 2px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-title.animate-in::after {
+  width: 60px;
+}
+
+/* ---- TESTIMONIAL CARD QUOTE ANIMATION ---- */
+.testimonial-card .quote-icon {
+  transition: all 0.4s ease;
+}
+
+.testimonial-card:hover .quote-icon {
+  opacity: 1;
+  transform: scale(1.2) rotate(-5deg);
+  color: #2E4EA1;
+}
+
+/* ---- CONTACT FORM ENHANCEMENTS ---- */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2E4EA1;
+  box-shadow: 0 0 0 4px rgba(46, 78, 161, 0.1), 0 4px 16px rgba(46, 78, 161, 0.08);
+  transform: translateY(-1px);
+}
+
+/* ---- CONTACT ICON BOUNCE ---- */
+.contact-detail-icon {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.contact-detail-item:hover .contact-detail-icon {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 6px 20px rgba(46, 78, 161, 0.15);
+}
+
+/* ---- CONFETTI ---- */
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  z-index: 100001;
+  pointer-events: none;
+  animation: confettiFall 1.5s ease forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(calc(100vh)) rotate(720deg) scale(0);
+    opacity: 0;
+  }
+}
+
+/* ---- FOOTER STICKY REVEAL ---- */
+.footer {
+  position: relative;
+}
+
+/* ---- PAGE HERO PARALLAX ---- */
+.page-hero,
+.hero {
+  overflow: hidden;
+}
+
+.page-hero-content,
+.hero-content {
+  transition: transform 0.1s linear;
+}
+
+/* ---- IMAGE REVEAL MASK ---- */
+.image-reveal {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-reveal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #2E4EA1;
+  z-index: 2;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.image-reveal.revealed::before {
+  transform: scaleX(0);
+}
+
+/* ---- STAGGER LIST ITEMS ---- */
+.stagger-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---- HERO SLIDE Ken Burns effect ---- */
+.slide.active {
+  animation: kenBurns 8s ease-in-out forwards;
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+/* ---- STAT NUMBER GLOW ON COMPLETE ---- */
+.stat-num.counted {
+  text-shadow: 0 0 20px rgba(46, 78, 161, 0.3);
+  transition: text-shadow 0.5s ease;
+}
+
+/* ---- SCROLL DOWN INDICATOR (Hero) ---- */
+.scroll-indicator {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-indicator i {
+  font-size: 1.2rem;
+  animation: scrollArrow 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+@keyframes scrollArrow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ---- SMOOTH LINK TRANSITIONS ---- */
+.link-arrow {
+  position: relative;
+  overflow: hidden;
+}
+
+.link-arrow i {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.link-arrow:hover i {
+  transform: translateX(4px);
+}
+
+/* ---- SOCIAL LINKS HOVER ENHANCEMENT ---- */
+.social-links a {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.social-links a:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* ---- HERO DOTS ENHANCED ---- */
+.dot {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+}
+
+.dot.active {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.2);
+}
+
+/* ---- ABOUT IMAGE BLOCK HOVER ---- */
+.about-img-block {
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.about-img-block:hover {
+  transform: scale(1.02);
+  box-shadow: 0 24px 60px rgba(46, 78, 161, 0.2);
+}
+
+/* ---- MAP REVEAL ---- */
+.map-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.map-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- MOBILE PERFORMANCE: Reduce animations ---- */
+@media (max-width: 768px) {
+
+  .custom-cursor,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  .float-icon {
+    animation: none;
+  }
+
+  .slide.active {
+    animation: none;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* ---- REDUCED MOTION PREFERENCE ---- */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .preloader {
+    display: none !important;
+  }
+
+  .custom-cursor,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  .scroll-progress {
+    display: none !important;
+  }
+}
