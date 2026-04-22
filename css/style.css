@@ -9,6 +9,8 @@
   --brand: #2E4EA1;
   --brand-dark: #1e3578;
   --brand-light: #e8edf8;
+  --brand-purple: #674ea7;
+  --brand-green: #008037;
   --text-dark: #1a1a2e;
   --text-body: #4a4a6a;
   --text-muted: #8888aa;
@@ -128,7 +130,7 @@ h3 { font-size: 1.15rem; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 18px 0;
+  padding: 12px 0;
   transition: all 0.4s ease;
   background: transparent;
 }
@@ -137,7 +139,7 @@ h3 { font-size: 1.15rem; }
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  padding: 12px 0;
+  padding: 10px 0;
   box-shadow: 0 1px 20px rgba(46,78,161,0.06);
   border-bottom: 1px solid rgba(46,78,161,0.04);
 }
@@ -149,13 +151,13 @@ h3 { font-size: 1.15rem; }
 }
 
 .logo img {
-  height: 44px;
+  height: 60px;
   width: auto;
   filter: brightness(0) invert(1);
-  transition: filter var(--transition);
+  transition: all var(--transition);
 }
 
-.navbar.scrolled .logo img { filter: none; }
+.navbar.scrolled .logo img { filter: none; height: 52px; }
 
 .nav-links {
   display: flex;
@@ -344,9 +346,10 @@ h3 { font-size: 1.15rem; }
   cursor: default;
 }
 
-.industry-item i {
-  font-size: 1.5rem;
-  color: var(--brand);
+.industry-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
   transition: transform var(--transition);
 }
 
@@ -454,7 +457,7 @@ h3 { font-size: 1.15rem; }
   padding-bottom: 50px;
 }
 
-.footer-logo { height: 48px; margin-bottom: 1rem; filter: brightness(0) invert(1); }
+.footer-logo { height: 64px; margin-bottom: 1rem; filter: brightness(0) invert(1); }
 
 .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-bottom: 1.25rem; }
 
@@ -559,6 +562,88 @@ h3 { font-size: 1.15rem; }
   transform: translateY(0);
 }
 
+/* ---- BRAND COLORS ---- */
+.text-purple { color: var(--brand-purple); }
+.text-green { color: var(--brand-green); }
+.bg-purple { background-color: var(--brand-purple); }
+.bg-green { background-color: var(--brand-green); }
+
+/* ---- FLOATING WHATSAPP ---- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all 0.3s ease;
+  animation: wa-pulse 2s infinite;
+}
+
+@keyframes wa-pulse {
+  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6); }
+  100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  color: #fff;
+}
+
+/* ---- PRELOADER ---- */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+.preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 30px;
+  animation: logoPulse 2s infinite ease-in-out;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.preloader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--brand-light);
+  border-top-color: var(--brand);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 /* ---- FADE UP (hero) ---- */
 .fade-up { opacity: 0; transform: translateY(20px); animation: fadeUp 0.7s ease forwards; }
 .delay-1 { animation-delay: 0.2s; }
@@ -602,6 +687,14 @@ h3 { font-size: 1.15rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 
   .page-hero { height: 320px; }
+
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 26px;
+  }
 }
 
 @media (max-width: 480px) {

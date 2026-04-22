@@ -103,3 +103,43 @@
 
   .product-detail-img { height: 260px; }
 }
+
+/* ---- CERTIFICATE STYLES ---- */
+.certificates-flex-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.certificates-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.certificate-image-wrap {
+  flex: 1;
+  text-align: center;
+}
+
+.full-certificate {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  transition: transform 0.5s ease;
+}
+
+.full-certificate:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 1024px) {
+  .certificates-flex-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
