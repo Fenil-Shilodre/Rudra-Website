@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
-  align-items: center;
+  align-items: start; /* Changed from center to start to keep info aligned with top of image */
   margin-bottom: 5rem;
   padding-bottom: 5rem;
   border-bottom: 1px solid var(--border);
@@ -141,5 +141,95 @@
   .certificates-flex-container {
     flex-direction: column;
     gap: 3rem;
+  }
+}
+/* ---- SPECIFICATION TABLE ---- */
+.product-specs {
+  grid-column: 1 / -1; /* Make it span full width */
+  margin-top: 1rem; /* Reduced from 3rem as it's now a grid item */
+  width: 100%;
+}
+
+.spec-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.spec-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--brand);
+  border-radius: 2px;
+}
+
+.spec-table {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease;
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  background: rgba(30, 64, 175, 0.04);
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spec-label i {
+  width: 20px;
+  color: var(--brand);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.spec-value {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+}
+
+.spec-row:hover {
+  background: rgba(30, 64, 175, 0.01);
+}
+
+@media (max-width: 600px) {
+  .spec-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .spec-label {
+    padding: 0.75rem 1.25rem;
+    background: rgba(30, 64, 175, 0.06);
+  }
+  
+  .spec-value {
+    padding: 0.75rem 1.25rem;
   }
 }
