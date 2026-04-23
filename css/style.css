@@ -189,6 +189,7 @@ h3 { font-size: 1.15rem; }
 .navbar.scrolled .nav-links a.active { color: var(--brand); }
 
 .nav-cta { margin-left: 1rem; }
+.menu-close { display: none; }
 
 .hamburger {
   display: none;
@@ -661,24 +662,74 @@ h3 { font-size: 1.15rem; }
 
 @media (max-width: 768px) {
   .section { padding: 60px 0; }
+  
+  .navbar.scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #fff;
+  }
 
-  .nav-links, .nav-cta {
-    display: none;
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; 
+    right: 0; 
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    background: #fff;
+    z-index: 2000;
+    padding: 100px 40px;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -20px 0 60px rgba(0,0,0,0.1);
+    border-left: 1px solid var(--border);
+    margin: 0;
   }
 
   .nav-links.open {
     display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: #fff;
-    z-index: 999;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    transform: translateX(0);
   }
 
-  .nav-links.open a { color: var(--text-dark); font-size: 1.1rem; }
+  .nav-links a { color: var(--text-dark); font-size: 1.05rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--brand); }
+
+  .menu-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: var(--brand-light);
+    color: var(--brand);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .menu-close:hover { background: var(--brand); color: #fff; transform: rotate(90deg); }
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(13, 23, 48, 0.4);
+    z-index: 900;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
 
   .hamburger { display: flex; }
 

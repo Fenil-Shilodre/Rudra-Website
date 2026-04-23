@@ -17,9 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (hamburger && navLinks) {
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('open');
+      overlay.classList.toggle('active');
       const isOpen = navLinks.classList.contains('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
       hamburger.setAttribute('aria-expanded', isOpen);
       // Animate hamburger to X
       const spans = hamburger.querySelectorAll('span');
@@ -40,12 +46,36 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
-        hamburger.querySelectorAll('span').forEach(s => {
-          s.style.transform = '';
-          s.style.opacity = '';
-        });
+        overlay.classList.remove('active');
+        resetHamburger();
       });
     });
+
+    const menuClose = document.getElementById('menuClose');
+    if (menuClose) {
+      menuClose.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        overlay.classList.remove('active');
+        resetHamburger();
+      });
+    }
+
+    overlay.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      overlay.classList.remove('active');
+      resetHamburger();
+    });
+
+    function resetHamburger() {
+      document.body.style.overflow = '';
+      hamburger.setAttribute('aria-expanded', 'false');
+      const spans = hamburger.querySelectorAll('span');
+      spans.forEach(s => {
+        s.style.transform = '';
+        s.style.opacity = '';
+        s.style.background = '';
+      });
+    }
   }
 
   /* ---- HERO SLIDESHOW ---- */
