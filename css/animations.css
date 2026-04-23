@@ -7,7 +7,7 @@
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background: #0a1128;
+  background: #091025;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,8 +32,8 @@
 .preloader-spinner {
   width: 48px;
   height: 48px;
-  border: 3px solid rgba(46, 78, 161, 0.2);
-  border-top: 3px solid #2E4EA1;
+  border: 3px solid rgba(30, 64, 175, 0.2);
+  border-top: 3px solid #1E40AF;
   border-radius: 50%;
   animation: spinLoader 0.8s linear infinite;
 }
@@ -63,7 +63,7 @@
   position: fixed;
   width: 8px;
   height: 8px;
-  background: #2E4EA1;
+  background: #1E40AF;
   border-radius: 50%;
   pointer-events: none;
   z-index: 100000;
@@ -81,7 +81,7 @@
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 1.5px solid rgba(46, 78, 161, 0.35);
+  border: 1.5px solid rgba(30, 64, 175, 0.35);
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
@@ -97,8 +97,8 @@
 .cursor-ring.hovering {
   width: 56px;
   height: 56px;
-  border-color: rgba(46, 78, 161, 0.6);
-  background: rgba(46, 78, 161, 0.05);
+  border-color: rgba(30, 64, 175, 0.6);
+  background: rgba(30, 64, 175, 0.05);
 }
 
 /* Hide custom cursor on touch devices */
@@ -117,8 +117,8 @@
   left: 0;
   height: 3px;
   width: 0%;
-  background: linear-gradient(90deg, #2E4EA1, #6b8cff, #2E4EA1);
-  background-size: 200% 100%;
+  background: linear-gradient(90deg, #1E40AF, #047857, #6D28D9, #1E40AF);
+  background-size: 300% 100%;
   animation: gradientShift 3s ease infinite;
   z-index: 10001;
   transition: width 0.05s linear;
@@ -130,7 +130,7 @@
   background: rgba(255, 255, 255, 0.82) !important;
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  border-bottom: 1px solid rgba(46, 78, 161, 0.06);
+  border-bottom: 1px solid rgba(30, 64, 175, 0.06);
 }
 
 /* ---- MAGNETIC BUTTON WRAPPER ---- */
@@ -202,11 +202,11 @@
 }
 
 .service-card:hover {
-  box-shadow: 0 20px 60px rgba(46, 78, 161, 0.15), 0 0 0 1px rgba(46, 78, 161, 0.1);
+  box-shadow: 0 20px 60px rgba(30, 64, 175, 0.15), 0 0 0 1px rgba(30, 64, 175, 0.1);
 }
 
 .team-card:hover {
-  box-shadow: 0 20px 60px rgba(46, 78, 161, 0.15);
+  box-shadow: 0 20px 60px rgba(30, 64, 175, 0.15);
 }
 
 /* ---- GLOW BORDER ON HOVER ---- */
@@ -216,7 +216,7 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(46, 78, 161, 0.3), rgba(107, 140, 255, 0.1), rgba(46, 78, 161, 0.3));
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.3), rgba(109, 40, 217, 0.1), rgba(30, 64, 175, 0.3));
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -277,13 +277,13 @@
 }
 
 .industry-item:hover i {
-  text-shadow: 0 0 20px rgba(46, 78, 161, 0.4), 0 0 40px rgba(46, 78, 161, 0.15);
+  text-shadow: 0 0 20px rgba(30, 64, 175, 0.4), 0 0 40px rgba(30, 64, 175, 0.15);
   transform: scale(1.25);
 }
 
 /* ---- CTA GRADIENT ANIMATION ---- */
 .cta-band {
-  background: linear-gradient(135deg, #1e3578, #2E4EA1, #3d63c7, #2E4EA1, #1e3578);
+  background: linear-gradient(135deg, #162e8a, #047857, #6D28D9, #1E40AF, #162e8a);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
 }
@@ -309,7 +309,7 @@
 
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 48px rgba(46, 78, 161, 0.12), 0 8px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 24px 48px rgba(30, 64, 175, 0.12), 0 8px 16px rgba(0, 0, 0, 0.06);
 }
 
 .product-card:hover .product-img {
@@ -326,7 +326,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(46, 78, 161, 0.05) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, transparent 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -344,11 +344,11 @@
 
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(46, 78, 161, 0.15);
+    box-shadow: 0 0 0 0 rgba(30, 64, 175, 0.15);
   }
 
   50% {
-    box-shadow: 0 0 0 6px rgba(46, 78, 161, 0);
+    box-shadow: 0 0 0 6px rgba(30, 64, 175, 0);
   }
 }
 
@@ -384,7 +384,7 @@
   left: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, #2E4EA1, #6b8cff);
+  background: linear-gradient(90deg, #1E40AF, #047857, #6D28D9);
   border-radius: 2px;
   transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -401,7 +401,7 @@
 .testimonial-card:hover .quote-icon {
   opacity: 1;
   transform: scale(1.2) rotate(-5deg);
-  color: #2E4EA1;
+  color: #047857;
 }
 
 /* ---- CONTACT FORM ENHANCEMENTS ---- */
@@ -414,8 +414,8 @@
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: #2E4EA1;
-  box-shadow: 0 0 0 4px rgba(46, 78, 161, 0.1), 0 4px 16px rgba(46, 78, 161, 0.08);
+  border-color: #1E40AF;
+  box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1), 0 4px 16px rgba(30, 64, 175, 0.08);
   transform: translateY(-1px);
 }
 
@@ -426,7 +426,7 @@
 
 .contact-detail-item:hover .contact-detail-icon {
   transform: scale(1.1) rotate(-5deg);
-  box-shadow: 0 6px 20px rgba(46, 78, 161, 0.15);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.15);
 }
 
 /* ---- CONFETTI ---- */
@@ -478,7 +478,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: #2E4EA1;
+  background: #1E40AF;
   z-index: 2;
   transform: scaleX(1);
   transform-origin: right;
@@ -518,7 +518,7 @@
 
 /* ---- STAT NUMBER GLOW ON COMPLETE ---- */
 .stat-num.counted {
-  text-shadow: 0 0 20px rgba(46, 78, 161, 0.3);
+  text-shadow: 0 0 20px rgba(30, 64, 175, 0.3);
   transition: text-shadow 0.5s ease;
 }
 
@@ -616,7 +616,7 @@
 
 .about-img-block:hover {
   transform: scale(1.02);
-  box-shadow: 0 24px 60px rgba(46, 78, 161, 0.2);
+  box-shadow: 0 24px 60px rgba(30, 64, 175, 0.2);
 }
 
 /* ---- MAP REVEAL ---- */

@@ -4,7 +4,7 @@
 
 .about-hero {
   background-image: url('../assets/hero/hero-2.jpg');
-  background-color: #1a2a5e;
+  background-color: #152570;
 }
 
 /* ---- ABOUT STORY ---- */
@@ -46,7 +46,7 @@
   font-weight: 500;
 }
 
-.value-item i { color: var(--brand); font-size: 0.9rem; }
+.value-item i { color: var(--brand-green); font-size: 0.9rem; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {

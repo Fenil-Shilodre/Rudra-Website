@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
         spans[1].style.opacity = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-        spans[0].style.background = '#2E4EA1';
-        spans[2].style.background = '#2E4EA1';
+        spans[0].style.background = '#1E40AF';
+        spans[2].style.background = '#1E40AF';
       } else {
         spans[0].style.transform = '';
         spans[1].style.opacity = '';

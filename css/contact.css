@@ -4,7 +4,7 @@
 
 .contact-hero {
   background-image: url('../assets/hero/hero-3.jpg');
-  background-color: #1a2a5e;
+  background-color: #152570;
 }
 
 /* ---- CONTACT LAYOUT ---- */
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand);
+  color: var(--brand-green);
   font-size: 1rem;
   flex-shrink: 0;
 }
@@ -129,7 +129,7 @@
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(46,78,161,0.1);
+  box-shadow: 0 0 0 3px rgba(30,64,175,0.1);
 }
 
 .form-group textarea { resize: vertical; min-height: 120px; }

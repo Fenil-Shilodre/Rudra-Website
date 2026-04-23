@@ -4,7 +4,7 @@
 
 .products-hero {
   background-image: url('../assets/hero/hero-1.jpg');
-  background-color: #1a2a5e;
+  background-color: #152570;
 }
 
 /* ---- PRODUCT DETAIL CARDS ---- */
@@ -88,7 +88,7 @@
 
 .product-features li:last-child { border-bottom: none; }
 
-.product-features i { color: var(--brand); font-size: 0.8rem; flex-shrink: 0; }
+.product-features i { color: var(--brand-green); font-size: 0.8rem; flex-shrink: 0; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {

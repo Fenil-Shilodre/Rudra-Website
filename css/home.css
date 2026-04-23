@@ -32,15 +32,15 @@
 /* Placeholder gradient backgrounds (replace with real images) */
 .slide-1 {
   background-image: url('../assets/hero/hero-1.jpg');
-  background-color: #1a2a5e;
+  background-color: #152570;
 }
 .slide-2 {
   background-image: url('../assets/hero/hero-2.jpg');
-  background-color: #1e3060;
+  background-color: #182d78;
 }
 .slide-3 {
   background-image: url('../assets/hero/hero-3.jpg');
-  background-color: #162248;
+  background-color: #121e58;
 }
 
 .hero-overlay {
@@ -48,8 +48,8 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(15, 26, 58, 0.78) 0%,
-    rgba(46, 78, 161, 0.45) 100%
+    rgba(13, 23, 48, 0.78) 0%,
+    rgba(30, 64, 175, 0.45) 100%
   );
   z-index: 1;
 }

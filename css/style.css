@@ -1,24 +1,24 @@
 /* ============================================
    RUDRA INDUSTRIES – Global Styles
-   Brand Color: #2E4EA1 (Deep Blue)
+   Brand Colors: Blue #1E40AF | Purple #6D28D9 | Green #047857
    ============================================ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --brand: #2E4EA1;
-  --brand-dark: #1e3578;
-  --brand-light: #e8edf8;
-  --brand-purple: #674ea7;
-  --brand-green: #008037;
+  --brand: #1E40AF;
+  --brand-dark: #162e8a;
+  --brand-light: #e6eaf8;
+  --brand-purple: #6D28D9;
+  --brand-green: #047857;
   --text-dark: #1a1a2e;
   --text-body: #4a4a6a;
   --text-muted: #8888aa;
   --bg-white: #ffffff;
   --bg-light: #f5f6fa;
   --border: #e2e5f0;
-  --shadow-sm: 0 2px 12px rgba(46,78,161,0.07);
-  --shadow-md: 0 6px 28px rgba(46,78,161,0.12);
+  --shadow-sm: 0 2px 12px rgba(30,64,175,0.07);
+  --shadow-md: 0 6px 28px rgba(30,64,175,0.12);
   --radius: 10px;
   --radius-lg: 16px;
   --transition: 0.3s ease;
@@ -99,7 +99,7 @@ h3 { font-size: 1.15rem; }
   background: var(--brand-dark);
   border-color: var(--brand-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(46,78,161,0.25);
+  box-shadow: 0 8px 24px rgba(30,64,175,0.25);
 }
 
 .btn-outline-white {
@@ -140,8 +140,8 @@ h3 { font-size: 1.15rem; }
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
   padding: 10px 0;
-  box-shadow: 0 1px 20px rgba(46,78,161,0.06);
-  border-bottom: 1px solid rgba(46,78,161,0.04);
+  box-shadow: 0 1px 20px rgba(30,64,175,0.06);
+  border-bottom: 1px solid rgba(30,64,175,0.04);
 }
 
 .nav-inner {
@@ -223,7 +223,7 @@ h3 { font-size: 1.15rem; }
 .page-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(30,53,120,0.82) 0%, rgba(46,78,161,0.65) 100%);
+  background: linear-gradient(135deg, rgba(22,46,138,0.82) 0%, rgba(30,64,175,0.65) 100%);
 }
 
 .page-hero-content {
@@ -284,7 +284,7 @@ h3 { font-size: 1.15rem; }
 }
 
 .service-card:hover .service-icon {
-  background: var(--brand);
+  background: var(--brand-green);
   color: #fff;
 }
 
@@ -307,7 +307,7 @@ h3 { font-size: 1.15rem; }
 .stat-plus {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--brand);
+  color: var(--brand-green);
 }
 
 .stat-card p {
@@ -382,10 +382,10 @@ h3 { font-size: 1.15rem; }
 }
 
 .quote-icon {
-  color: var(--brand);
+  color: var(--brand-green);
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .testimonial-card p {
@@ -445,7 +445,7 @@ h3 { font-size: 1.15rem; }
 
 /* ---- FOOTER ---- */
 .footer {
-  background: #0f1a3a;
+  background: #0d1730;
   color: rgba(255,255,255,0.7);
   padding-top: 70px;
 }
@@ -526,12 +526,12 @@ h3 { font-size: 1.15rem; }
 }
 
 .footer-bottom .devphant {
-  color: #00c896;
+  color: var(--brand-green);
   font-weight: 600;
   transition: color var(--transition);
 }
 
-.footer-bottom .devphant:hover { color: #00e6ac; }
+.footer-bottom .devphant:hover { color: #059669; }
 
 /* WhatsApp social icon */
 .social-links a.whatsapp:hover {
