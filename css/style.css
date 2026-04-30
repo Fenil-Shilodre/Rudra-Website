@@ -200,7 +200,7 @@ h3 {
 }
 
 .logo img {
-  height: 60px;
+  height: 80px;
   width: auto;
   filter: brightness(0) invert(1);
   transition: all var(--transition);
@@ -208,7 +208,7 @@ h3 {
 
 .navbar.scrolled .logo img {
   filter: none;
-  height: 52px;
+  height: 64px;
 }
 
 .nav-links {
@@ -418,17 +418,20 @@ h3 {
 
 /* ---- INDUSTRIES ---- */
 .industries-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .industry-item {
+  flex: 0 1 calc(25% - 1.5rem);
+  min-width: 170px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1.75rem 1rem;
+  gap: 1rem;
+  padding: 2rem 1rem;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -440,8 +443,8 @@ h3 {
 }
 
 .industry-item img {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   transition: transform var(--transition);
 }
@@ -454,6 +457,78 @@ h3 {
 
 .industry-item:hover i {
   transform: scale(1.15);
+}
+
+/* ---- PRODUCTS GRID (GLOBAL) ---- */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.product-card {
+  flex: 0 1 calc(33.333% - 1.5rem);
+  min-width: 280px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+}
+
+.product-img {
+  height: 220px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1.25rem;
+  background-color: #fff;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+
+.product-img-large {
+  padding: 0.5rem !important;
+  background-size: 140% !important;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.04);
+}
+
+.product-info {
+  padding: 1.25rem;
+}
+
+.product-info h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-dark);
+}
+
+.product-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 992px) {
+  .product-card {
+    flex: 0 1 calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    flex: 1 1 100%;
+  }
 }
 
 /* ---- TESTIMONIALS ---- */
@@ -548,7 +623,9 @@ h3 {
 }
 
 /* ---- ABOUT STRIP (Home & About) ---- */
-.about-strip { background: var(--bg-white); }
+.about-strip {
+  background: var(--bg-white);
+}
 
 .about-strip-inner {
   display: grid;
@@ -600,7 +677,7 @@ h3 {
 }
 
 .footer-logo {
-  height: 64px;
+  height: 80px;
   margin-bottom: 1rem;
   filter: brightness(0) invert(1);
 }
@@ -809,7 +886,7 @@ h3 {
 }
 
 .preloader-logo {
-  height: 150px;
+  height: 180px;
   width: auto;
   object-fit: contain;
   margin-bottom: 30px;
